@@ -2,3 +2,4 @@ geopy==1.17.0
 fastapi==0.85.0
 requests==2.27.1
 uvicorn==0.18.3
+gunicorn==19.3.0
