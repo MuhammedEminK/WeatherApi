@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from WeatherApi.weather import Weather
 from fastapi.responses import PlainTextResponse
+import uvicorn
 
 class Coordinate(BaseModel):
     lat:str
@@ -25,3 +26,6 @@ async def now(item: Coordinate,):
     x = w.now(lat=float(item.lat), lon=float(item.lon))
 
     return x
+
+if __name__=="__main__":
+    uvicorn.run("apiW:app",host='0.0.0.0', port=8000, reload=True)
